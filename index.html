@@ -40,6 +40,7 @@
 
 
 
+
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css">
@@ -291,10 +292,6 @@
           <div id="servicesKeyPoints2" class="col-md-6 col-lg-4">
             <div id="servicesKeyPointsUnderDiv">
               <div class="key-points-container">
-
-
-
-
                 <div class="construction-points">
                   <ul>
                     <li>Concrete Work and Masonry</li>
@@ -550,7 +547,98 @@
     </div>
   </div>
 
-  <div data-aos="fade-right" data-aos-delay="100" id="testimonial">
+  <section class="testimonialContainer" data-aos="fade-down" >
+    <div id="clientTestimonial">
+      Client,s Testimonial</div>
+    <div id="clientTestimonialHeading">
+      See What,s Our Client<br />Says About Us</div>
+    <div class="testimonial1">
+
+      <div class="testi-content">
+        <div class="slide">
+          <p>We are especially impressed with the care and attention that Gate Property Management gave us
+            in helping to find our new home.</p>
+          <div class="details">
+            <span class="name">C&nbsp;Satish&nbsp;Reddy</span>
+          </div>
+        </div>
+
+        <div class="slide">
+          <p> After years of pestering my relatives to look after my properties in Hyderabad, I finally
+            availed iGate's PMS; and now i am reassured that my assets are looked after well and at reasonable cost. I
+            could finally trust someone to do the right thing without paying through my nose for it.</p>
+          <div class="details">
+            <span class="name">Prem&nbsp;kumar&nbsp;Kakani</span>
+          </div>
+        </div>
+
+        <div class="slide">
+          <p> iGate now manages my properties in india and i am very happy with their services. My apartments and
+            agricultural lands are ably serviced by them. I get prompt service request are acted upon
+            immediately. I have even sold my existing apartment and also bought a new one to my full satisfaction. I
+            would recommend iGate to all NRI's in the USA.</p>
+          <div class="details">
+            <span class="name">PVL&nbsp;Narsimha&nbsp;Raju</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    const testiContent = document.querySelector('.testi-content');
+    function startSlideshow() {
+      setInterval(() => {
+        testiContent.style.transform = 'translateX(-100%)';
+        setTimeout(() => {
+          testiContent.appendChild(testiContent.firstElementChild);
+          testiContent.style.transition = 'none';
+          testiContent.style.transform = 'translateX(0)';
+          setTimeout(() => {
+            testiContent.style.transition = 'transform 0.5s ease-in-out';
+          });
+        }, 500);
+      }, 5000);
+    }
+
+    window.addEventListener('load', startSlideshow);
+  </script>
+
+
+
+
+
+
+
+  <!-- <div>
+    <row>
+      <col class="col-lg-6 col-md-6 col-sm-6 col-xs-12 col-12">
+      <h2>Testimonial</h2>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi molestias ex error in atque quas, impedit
+        est aut, itaque nisi ad fuga perspiciatis repellendus dolores dolorum, architecto similique qui sunt!</p>
+      </col>
+      <div>
+        <div id="firstReviewText">
+          C&nbsp;Satish&nbsp;Reddy
+          <span style="margin-left: 10%; font-size: small; margin-top: 2%;" class="fa fa-star checked"></span>
+          <span style="font-size: small; margin-top: 2%" class="fa fa-star checked"></span>
+          <span style="font-size: small; margin-top: 2%" class="fa fa-star checked"></span>
+          <span style="font-size: small; margin-top: 2%" class="fa fa-star checked"></span>
+          <span style="font-size: small; margin-top: 2%" class="fa fa-star checked"></span>
+        </div>
+        <div id="satishReddyPara">
+          We are especially impressed with the care and attention that Gate Property Management gave us
+          in helping to find our new home.
+        </div>
+      </div>
+
+      <col>
+      </col>
+
+    </row>
+  </div> -->
+
+  <!-- <div data-aos="fade-right" data-aos-delay="100" id="testimonial">
     <div id="Testimonial1">
       <div id="clientTestimonial">
         Client,s Testimonial</div>
@@ -605,7 +693,7 @@
         </div>
       </div>
     </div>
-  </div>
+  </div> -->
 
   <section id="contact" class="contact">
     <div class="container" data-aos="fade-up">
