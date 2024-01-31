@@ -56,7 +56,7 @@
 
 <body>
 
-  <div class="bubbles">
+  <!-- <div class="bubbles">
     <img src="./assets/img/bubble.png">
     <img src="./assets/img/bubble.png">
     <img src="./assets/img/bubble.png">
@@ -82,7 +82,7 @@
     <img src="./assets/img/bubble.png">
     <img src="./assets/img/bubble.png">
     <img src="./assets/img/bubble.png">
-  </div>
+  </div> -->
 
 
   <section id="topbar" class="d-flex align-items-center">
@@ -124,10 +124,10 @@
           </li>
           <li class="dropdown"><a href="#"><span>Our Services</span> <i class="bi bi-chevron-right"></i></a>
             <ul>
-              <li><a href="buy-sell.html">Buy / Sell</a></li>
-              <li><a href="rent-lease.html">Rent / Lease</a></li>
-              <li><a href="maintenance-utilities.html">Maintenance / Utilities</a></li>
-              <li><a href="interiors-handyman-services.html">Interior / Handyman Services</a></li>
+              <li><a href="govt-tends.html">Govt Tends</a></li>
+              <li><a href="retails-customers.html">Retails Customers</a></li>
+              <!-- <li><a href="">Maintenance / Utilities</a></li> -->
+              <!-- <li><a href="interiors-handyman-services.html">Interior / Handyman Services</a></li> -->
             </ul>
           </li>
           </li>
@@ -227,7 +227,7 @@
       <h3 style="font-family: poppins;">Our Main Focus</h3>
     </div>
     <div class="containerr">
-      <a href="./buy-sell.html">
+      <a href="govt-tends.html">
         <div class="cardd">
           <div class="liness"></div>
           <div class="imgBx">
@@ -246,7 +246,7 @@
           </div>
         </div>
       </a>
-      <a href="./maintenance-utilities.html">
+      <a href="retails-customers.html">
         <div class="cardd">
           <div class="liness"></div>
           <div class="imgBx">
@@ -547,7 +547,7 @@
     </div>
   </div>
 
-  <section class="testimonialContainer" data-aos="fade-down" >
+  <section class="testimonialContainer" data-aos="fade-down">
     <div id="clientTestimonial">
       Client,s Testimonial</div>
     <div id="clientTestimonialHeading">
@@ -582,26 +582,45 @@
           </div>
         </div>
       </div>
+      <div class="slide-icons-container">
+        <div class="slide-icon active" data-index="0"></div>
+        <div class="slide-icon" data-index="1"></div>
+        <div class="slide-icon" data-index="2"></div>
+      </div>
     </div>
   </section>
 
   <script>
+    document.addEventListener('DOMContentLoaded', function () {
     const testiContent = document.querySelector('.testi-content');
+    const slideIconsContainer = document.querySelector('.slide-icons-container');
+    const slideIcons = document.querySelectorAll('.slide-icon');
+
+    let currentIndex = 0;
+
     function startSlideshow() {
       setInterval(() => {
-        testiContent.style.transform = 'translateX(-100%)';
-        setTimeout(() => {
-          testiContent.appendChild(testiContent.firstElementChild);
-          testiContent.style.transition = 'none';
-          testiContent.style.transform = 'translateX(0)';
-          setTimeout(() => {
-            testiContent.style.transition = 'transform 0.5s ease-in-out';
-          });
-        }, 500);
+        currentIndex = (currentIndex + 1) % slideIcons.length;
+        updateSlide(currentIndex);
       }, 5000);
     }
+    function updateSlide(index) {
+      testiContent.style.transform = `translateX(-${index * 100}%)`;
 
+      // Update active class for icons
+      slideIcons.forEach((icon, i) => {
+        icon.classList.toggle('active', i === index);
+      });
+    }
+
+    slideIcons.forEach((icon, index) => {
+      icon.addEventListener('click', () => {
+        currentIndex = index;
+        updateSlide(currentIndex);
+      });
+    });
     window.addEventListener('load', startSlideshow);
+  });
   </script>
 
 
